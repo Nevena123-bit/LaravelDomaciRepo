@@ -18,3 +18,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
    
 });
+
+Route::get('/users', [App\Http\Controllers\UserController::class, 'index']);
+Route::get('/prodavnicas', [App\Http\Controllers\ProdavnicaController::class, 'index']);
+
+Route::get('/proizvodjaci', [App\Http\Controllers\ProizvodjacController::class, 'index']);
