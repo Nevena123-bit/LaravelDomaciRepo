@@ -14,7 +14,6 @@ class prodavnica extends Model
     }
     public function users()
     {
-     //   return $this->belongsToMany('App\User','users','pica_id','user_id');                 
         return $this->belongsToMany(User::class);
     }
 }

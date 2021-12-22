@@ -12,7 +12,9 @@ class ProdavnicaUserController extends Controller
     {
         $user=User::find($userid);
         if($user==null) abort(404);
-    
+        if($user->prodavnicas==null){
+            return $user;
+        }else 
         return $user->prodavnicas;
 
     }
