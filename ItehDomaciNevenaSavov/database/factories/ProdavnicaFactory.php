@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\prodavnica;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProdavnicaFactory extends Factory
@@ -11,13 +12,14 @@ class ProdavnicaFactory extends Factory
      *
      * @return array
      */
+    protected $model=prodavnica::class;
     public function definition()
     {
         return [
             'Naziv'=>$this->faker->name(),
             'Ocena'=>$this->faker->numberBetween(1,5),
             'starost'=>$this->faker->numberBetween(1,30),
-            'poreklo_id'=>$this->faker->numberBetween(1,9),
+           
             'Grad'=>$this->faker->name(),
             'proizvodjac_id'=>$this->faker->numberBetween(1,9)
 

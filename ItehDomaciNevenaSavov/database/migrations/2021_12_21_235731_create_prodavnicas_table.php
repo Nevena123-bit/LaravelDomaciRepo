@@ -13,6 +13,7 @@ class CreateProdavnicasTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('prodavnicas');
         Schema::create('prodavnicas', function (Blueprint $table) {
             $table->id();
             $table->string('Naziv')->unique();
@@ -21,7 +22,7 @@ class CreateProdavnicasTable extends Migration
             $table->string('Grad')->unique();
             $table->timestamps();
             $table->unsignedBigInteger('proizvodjac_id');
-            $table->foreign('poreklo_id')->references('id')->on('proizvodjacs');
+            $table->foreign('proizvodjac_id')->references('id')->on('proizvodjacs')->onDelete('cascade');
 
         });
     }
@@ -33,6 +34,9 @@ class CreateProdavnicasTable extends Migration
      */
     public function down()
     {
+        Schema::table('prodavnicas', function (Blueprint $table) {
+            $table->dropForeign('proizvodjac_id');
+        });
         Schema::dropIfExists('prodavnicas');
     }
 }

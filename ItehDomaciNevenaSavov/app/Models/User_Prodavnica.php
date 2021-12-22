@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User_Prodavnica extends Model
+class user_prodavnica extends Model
 {
     use HasFactory;
-    public $table = 'user__prodavnicas';
+    public $table = 'user_prodavnicas';
 }

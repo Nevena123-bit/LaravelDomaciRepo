@@ -13,6 +13,7 @@ class UserProdavnicaSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\user_prodavnica::factory()->count(10)->create();
+
     }
 }

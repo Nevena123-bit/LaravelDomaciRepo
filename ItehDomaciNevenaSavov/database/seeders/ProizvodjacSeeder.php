@@ -13,6 +13,7 @@ class ProizvodjacSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\proizvodjac::factory()->count(10)->create();
+
     }
 }
