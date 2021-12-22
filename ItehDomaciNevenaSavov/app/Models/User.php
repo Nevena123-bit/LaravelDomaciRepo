@@ -43,7 +43,6 @@ class User extends Authenticatable
     ];
     public function prodavnicas()
     {
-        //return $this->belongsToMany('App\Pica','picas','user_id','pica_id');        
-        return $this->belongsToMany(prodavnicas::class);
+        return $this->belongsToMany(prodavnica::class);
     }
 }
